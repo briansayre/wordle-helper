@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+</head>
+<script src="app.js"></script>
+
+<link rel="stylesheet" href="styles.css">
+
+<body>
+    <div class="container">
+
+        <div class="center" id="header">
+            <h1>
+                WORDLE HELPER
+            </h1>
+        </div>
+        <div class="center" id="flip">
+        </div>
+        <div class="center" id="letters">
+            <span class="letter" id="letter-0" onclick="cycleCorrect(0)"></span>
+            <span class="letter" id="letter-1" onclick="cycleCorrect(1)"></span>
+            <span class="letter" id="letter-2" onclick="cycleCorrect(2)"></span>
+            <span class="letter" id="letter-3" onclick="cycleCorrect(3)"></span>
+            <span class="letter" id="letter-4" onclick="cycleCorrect(4)"></span>
+        </div>
+        
+        <div class="center" id="flip">
+            Click the squares above to cycle correct letters.
+        </div>
+
+        <div class="center" id="key">
+            <span id="unknown"> Letter not tried </span>
+            <span id="contains"> Letter is in word </span>
+            <span id="incorrect"> Letter not in word </span>
+            <span id="correct"> Letter is correct </span>
+        </div>
+
+        <div id="keyboard">
+            <div class="center">
+                <span class="letter-unknown" id="q" onclick="toggleLetter('q')">q</span>
+                <span class="letter-unknown" id="w" onclick="toggleLetter('w')">w</span>
+                <span class="letter-unknown" id="e" onclick="toggleLetter('e')">e</span>
+                <span class="letter-unknown" id="r" onclick="toggleLetter('r')">r</span>
+                <span class="letter-unknown" id="t" onclick="toggleLetter('t')">t</span>
+                <span class="letter-unknown" id="y" onclick="toggleLetter('y')">y</span>
+                <span class="letter-unknown" id="u" onclick="toggleLetter('u')">u</span>
+                <span class="letter-unknown" id="i" onclick="toggleLetter('i')">i</span>
+                <span class="letter-unknown" id="o" onclick="toggleLetter('o')">o</span>
+                <span class="letter-unknown" id="p" onclick="toggleLetter('p')">p</span>
+                <br>
+            </div>
+            <div class="center">
+                <span class="letter-unknown" id="a" onclick="toggleLetter('a')">a</span>
+                <span class="letter-unknown" id="s" onclick="toggleLetter('s')">s</span>
+                <span class="letter-unknown" id="d" onclick="toggleLetter('d')">d</span>
+                <span class="letter-unknown" id="f" onclick="toggleLetter('f')">f</span>
+                <span class="letter-unknown" id="g" onclick="toggleLetter('g')">g</span>
+                <span class="letter-unknown" id="h" onclick="toggleLetter('h')">h</span>
+                <span class="letter-unknown" id="j" onclick="toggleLetter('j')">j</span>
+                <span class="letter-unknown" id="k" onclick="toggleLetter('k')">k</span>
+                <span class="letter-unknown" id="l" onclick="toggleLetter('l')">l</span>
+                <br>
+            </div>
+            <div class="center">
+                <span class="letter-unknown" id="z" onclick="toggleLetter('z')">z</span>
+                <span class="letter-unknown" id="x" onclick="toggleLetter('x')">x</span>
+                <span class="letter-unknown" id="c" onclick="toggleLetter('c')">c</span>
+                <span class="letter-unknown" id="v" onclick="toggleLetter('v')">v</span>
+                <span class="letter-unknown" id="b" onclick="toggleLetter('b')">b</span>
+                <span class="letter-unknown" id="n" onclick="toggleLetter('n')">n</span>
+                <span class="letter-unknown" id="m" onclick="toggleLetter('m')">m</span>
+            </div>
+        </div>
+        <div class="center">
+            <button type="submit" id="find" onclick="findWords()">Find words</button>
+            <h4 id="a">Possible words:</h4>
+            <ul id="possible">
+            </ul>
+        </div>
+        <br>
+
+    </div>
+
+</body>
+
+</html>

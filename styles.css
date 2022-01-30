@@ -1,0 +1,150 @@
+html, body {
+    background-color: #121213;
+    color: #d7dadc;
+    font-family: Arial, Helvetica, sans-serif;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none; 
+     -khtml-user-select: none;
+       -moz-user-select: none; 
+        -ms-user-select: none; 
+            user-select: none; 
+}
+
+.container {
+    width:100%
+}
+
+.center {
+    display: table;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1 {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#header {
+    width: 500px;
+    border-bottom: 1px solid #818384;
+}
+
+#letters {
+    margin: 40px auto 20px auto;
+}
+
+.letter {
+    width: 64px;
+    height: 64px;
+    text-align: center;
+    border: 2px solid #3c3c3e;
+    justify-content: center;
+    display: inline-block;
+    align-items: center;
+    font-size: 2rem;
+    line-height: 2rem;
+    font-weight: bold;
+    vertical-align: middle;
+    box-sizing: border-box;
+    color: var(--tile-text-color);
+    text-transform: uppercase;
+    user-select: none;
+    outline: none;
+    margin: 5px;
+    padding-top: 14px;
+}
+
+#keyboard span {
+    font-weight: bold;
+    border: none;
+    padding: 20px 0 0 0;
+    margin: 6px 2px 0 0;
+    height: 38px;
+    display: inline-block;
+    width: 43px;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #d7dadc;
+    align-items: center;
+    text-transform: uppercase;
+	outline: none;
+}
+
+.letter-unknown {
+    background-color: #818384;
+}
+.letter-correct {
+    background-color: #538d4e;
+}
+.letter-incorrect {
+    background-color: #3a3a3c;
+}
+.letter-contains {
+    background-color: #b59f3b;
+}
+
+.letter-default {
+    background-color: #121213;
+}
+
+#find {  
+    font-weight: bold;
+    border: 0;
+    padding: 0;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    display: inline-block;
+    height: 58px;
+    width: 300px;
+    border-radius: 4px;
+    cursor: pointer;
+    user-select: none;
+    background-color: #818384;
+    color: #d7dadc;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+#possible {
+    list-style-type: none;
+    max-height: 500px;
+    scroll-behavior: auto;
+    overflow-y: scroll;
+}
+
+#possible li {
+    width: 300px;
+    color: #d7dadc;
+    background-color: #818384;
+    border-radius: 4px;
+    margin-bottom: 3px;
+    padding: 5px;
+    font-weight: bold;
+
+}
+#key {
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+#key span {
+    border-radius: 4px;
+    padding: 4px;
+    margin: 4px;
+    font-weight: bold;
+}
+
+#key #unknown {
+    background-color: #818384;
+}
+#key #contains {
+    background-color: #b59f3b;
+}
+#key #incorrect {
+    background-color: #3a3a3c;
+}
+#key #correct {
+    background-color: #538d4e;
+}
