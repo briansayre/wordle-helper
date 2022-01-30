@@ -21,8 +21,7 @@
                 WORDLE HELPER
             </h1>
         </div>
-        <div class="center" id="flip">
-        </div>
+
         <div class="center" id="letters">
             <span class="letter" id="letter-0" onclick="cycleCorrect(0)"></span>
             <span class="letter" id="letter-1" onclick="cycleCorrect(1)"></span>
@@ -30,7 +29,7 @@
             <span class="letter" id="letter-3" onclick="cycleCorrect(3)"></span>
             <span class="letter" id="letter-4" onclick="cycleCorrect(4)"></span>
         </div>
-        
+
         <div class="center" id="flip">
             Click the squares above to cycle correct letters.
         </div>
@@ -78,12 +77,14 @@
                 <span class="letter-unknown" id="m" onclick="toggleLetter('m')">m</span>
             </div>
         </div>
+
         <div class="center">
             <button type="submit" id="find" onclick="findWords()">Find words</button>
             <h4 id="a">Possible words:</h4>
             <ul id="possible">
             </ul>
         </div>
+        
         <br>
 
     </div>

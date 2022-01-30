@@ -1,8 +1,7 @@
 let fullWords = [];
 let words = [];
-let answer = "grown"
 let results = {
-    "correctIndex": [0,0,0,0,0],
+    "correctIndex": [0, 0, 0, 0, 0],
     "correct": [" "],
     "contains": [],
     "incorrect": []
@@ -11,14 +10,13 @@ let results = {
 $(document).ready(function () {
 
     $.ajax({
-        url: "http://127.0.0.1:5500/words.txt",
+        url: "https://raw.githubusercontent.com/briansayre/wordle-helper/main/words.txt",
         type: 'GET',
         success: function (res) {
             fullWords = res.split("\n");
             words = fullWords;
         }
     });
-
 
 });
 
@@ -28,7 +26,7 @@ function findWords() {
     words = fullWords;
     let inputedWord = "";
     for (let i = 0; i < 5; i++) {
-        char =  document.getElementById("letter-"+i).innerHTML;
+        char = document.getElementById("letter-" + i).innerHTML;
         if (char.length != 1) {
             inputedWord += " ";
         } else {
@@ -36,7 +34,6 @@ function findWords() {
         }
     }
     inputedWord = inputedWord.toLowerCase();
-    console.log(inputedWord)
 
     // remove the words that dont have correct letter
     if (inputedWord != "     ") {
@@ -53,9 +50,8 @@ function findWords() {
         }
         words = newWords;
     }
-    
-    console.log(words);
 
+    // remove words thaty contain an incorrect letter
     if (results.incorrect.length != 0) {
         newWords = [];
         for (let i = 0; i < words.length; i++) {
@@ -70,10 +66,8 @@ function findWords() {
         }
         words = newWords;
     }
-    
 
-    console.log(words);
-
+    // remove words that dont have contained letters
     if (results.contains.length != 0) {
         newWords = [];
         for (let i = 0; i < words.length; i++) {
@@ -91,8 +85,6 @@ function findWords() {
         words = newWords;
     }
 
-    console.log(words);
-
     var ul = document.getElementById("possible");
     ul.innerHTML = "";
     for (let w = 0; w < words.length; w++) {
@@ -103,8 +95,8 @@ function findWords() {
 }
 
 function cycleCorrect(index) {
-    console.log("letter-"+index)
-    let element = document.getElementById("letter-"+index);
+    console.log("letter-" + index)
+    let element = document.getElementById("letter-" + index);
     results.correctIndex[index] = (results.correctIndex[index] + 1) % results.correct.length;
     element.innerHTML = results.correct[results.correctIndex[index]];
     if (element.innerHTML != " ") {
