@@ -36,7 +36,7 @@ function findWords() {
     inputedWord = inputedWord.toLowerCase();
 
     // remove the words that dont have correct letter
-    if (inputedWord != "     ") {
+    if (inputedWord.trim() != "") {
         let newWords = [];
         for (let i = 0; i < words.length; i++) {
             let good = true;
@@ -51,8 +51,9 @@ function findWords() {
         words = newWords;
     }
 
-    // remove words thaty contain an incorrect letter
+    // remove words that contain an incorrect letter
     if (results.incorrect.length != 0) {
+        console.log("here")
         newWords = [];
         for (let i = 0; i < words.length; i++) {
             let good = true;
@@ -113,13 +114,8 @@ function toggleLetter(letter) {
     let className = element.className;
     if (className.includes("letter-unknown")) {
         element.classList.remove("letter-unknown");
-        element.classList.add("letter-correct");
-        results.correct.push(letter);
-    } else if (className.includes("letter-correct")) {
-        element.classList.remove("letter-correct");
         element.classList.add("letter-incorrect");
         results.incorrect.push(letter);
-        results.correct.splice(results.correct.indexOf(letter), 1);
     } else if (className.includes("letter-incorrect")) {
         element.classList.remove("letter-incorrect");
         element.classList.add("letter-contains");
@@ -127,7 +123,13 @@ function toggleLetter(letter) {
         results.incorrect.splice(results.incorrect.indexOf(letter), 1);
     } else if (className.includes("letter-contains")) {
         element.classList.remove("letter-contains");
-        element.classList.add("letter-unknown");
+        element.classList.add("letter-correct");
+        results.correct.push(letter);
         results.contains.splice(results.contains.indexOf(letter), 1);
+    } else if (className.includes("letter-correct")) {
+        element.classList.remove("letter-correct");
+        element.classList.add("letter-unknown");
+        results.correct.splice(results.correct.indexOf(letter), 1);
     }
+    console.log(results)
 }
